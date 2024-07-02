@@ -1,0 +1,31 @@
+def sumar(a, b):
+    return a + b
+
+def restar(a, b):
+    return a - b
+
+def multiplicar(a, b):
+    return a * b
+
+def dividir(a, b):
+    # Error: No se maneja la división por cero
+    return a / b
+
+def calculadora(a, b, operacion):
+    if operacion == 'suma':
+        return sumar(a, b)
+    elif operacion == 'resta':
+        return restar(a, b)
+    elif operacion == 'multiplicación':
+        return multiplicar(a, b)
+    elif operacion == 'división':
+        return dividir(a, b)
+    else:
+        return "Operación no válida"
+
+# Ejemplo de uso
+a = 10
+b = 0
+operacion = 'división'
+resultado = calculadora(a, b, operacion)
+print(f"El resultado de la {operacion} es: {resultado}")
