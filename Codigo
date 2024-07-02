@@ -1,0 +1,107 @@
+//Codigo con Error en la division// 
+
+def sumar(a, b):
+    return a + b
+
+def restar(a, b):
+    return a - b
+
+def multiplicar(a, b):
+    return a * b
+
+def dividir(a, b):
+    # Error: No se maneja la división por cero
+    return a / b
+
+def calculadora(a, b, operacion):
+    if operacion == 'suma':
+        return sumar(a, b)
+    elif operacion == 'resta':
+        return restar(a, b)
+    elif operacion == 'multiplicación':
+        return multiplicar(a, b)
+    elif operacion == 'división':
+        return dividir(a, b)
+    else:
+        return "Operación no válida"
+
+if __name__ == "__main__":
+    a = 10
+    b = 0
+    operacion = 'división'
+    resultado = calculadora(a, b, operacion)
+    print(f"El resultado de la {operacion} es: {resultado}")
+
+//Error en la entrada de datos//
+def sumar(a, b):
+    return a + b
+
+def restar(a, b):
+    return a - b
+
+def multiplicar(a, b):
+    return a * b
+
+def dividir(a, b):
+    if b == 0:
+        return "Error: División por cero"
+    return a / b
+
+def calculadora(a, b, operacion):
+    if operacion == 'suma':
+        return sumar(a, b)
+    elif operacion == 'resta':
+        return restar(a, b)
+    elif operacion == 'multiplicación':
+        return multiplicar(a, b)
+    elif operacion == 'división':
+        return dividir(a, b)
+    else:
+        return "Operación no válida"
+
+if __name__ == "__main__":
+    # Ejemplo de uso con error en la entrada de datos
+    a = "diez"  # Error: Se espera un número, pero se proporciona una cadena
+    b = 5
+    operacion = 'suma'
+    resultado = calculadora(a, b, operacion)
+    print(f"El resultado de la {operacion} es: {resultado}")
+
+//Codigo Corregido//
+
+def sumar(a, b):
+    return a + b
+
+def restar(a, b):
+    return a - b
+
+def multiplicar(a, b):
+    return a * b
+
+def dividir(a, b):
+    if b == 0:
+        return "Error: División por cero"
+    return a / b
+
+def calculadora(a, b, operacion):
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        return "Error: Los operandos deben ser números"
+    
+    if operacion == 'suma':
+        return sumar(a, b)
+    elif operacion == 'resta':
+        return restar(a, b)
+    elif operacion == 'multiplicación':
+        return multiplicar(a, b)
+    elif operacion == 'división':
+        return dividir(a, b)
+    else:
+        return "Operación no válida"
+
+if __name__ == "__main__":
+    a = 10
+    b = 5
+    operacion = 'suma'
+    resultado = calculadora(a, b, operacion)
+    print(f"El resultado de la {operacion} es: {resultado}")
+
